@@ -22,7 +22,7 @@ These made it into my collection:
 
 ## 🐧 Linux scripts
 
-All the Windows scripts shall be provided in the [linux](https://github.com/w1bb/quick-scripts/blob/master/linux) directory.
+All the Linux scripts shall be provided in the [linux](https://github.com/w1bb/quick-scripts/blob/master/linux) directory.
 
 The following made it into my collection:
 
