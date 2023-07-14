@@ -18,4 +18,16 @@ These made it into my collection:
 
   This script will quickly block internet access to all the executable files (`(*.exe)`) inside a given folder (`[INSERT PATH HERE]`), recursively (`/R`). Both inbound (`dir=in`) and outbound (`dir=out`) connections will cease to exist.
 
-  ⚠️ Admin privileges required
+  ⚠️ **Admin privileges required**
+
+## 🐧 Linux scripts
+
+All the Windows scripts shall be provided in the [linux](https://github.com/w1bb/quick-scripts/blob/master/linux) directory.
+
+The following made it into my collection:
+
+- 🎉 Yay Installer ([yay.sh](https://github.com/w1bb/quick-scripts/blob/master/linux/yay.sh))
+
+  This script will automatically install the `yay` package manager on your arch system.
+
+  ⚠️ **sudo privileges required**
