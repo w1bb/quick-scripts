@@ -31,3 +31,12 @@ The following made it into my collection:
   This script will automatically install the `yay` package manager on your arch system.
 
   ⚠️ **sudo privileges required**
+
+- 🔧 ISO USB Burner
+
+  First, use `lsblk` to figure out what is the name of your USB drive (`sdX`, where `X` could be `a`, `b` etc.). Then, adapt the following one-liner to your needs:
+
+  ```
+  # dd bs=4M if=path/to/iso of=/dev/sdX conv=fsync oflag=direct status=progress
+  ```
+  ⚠️ **sudo privileges required**
