@@ -74,7 +74,7 @@ ip l s veth-red up
 
 ### Routing
 
-To enable routing, we need to run: `sysctl -w net.ipv4.ip_forward=1` (or `sysctl -w net.ipv6.ip_forward=1` for IPv6 routing).
+To enable routing, we need to run: `sysctl -w net.ipv4.ip_forward=1` (or `sysctl -w net.ipv6.conf.all.forwarding=1` for IPv6 routing).
 
 To set a default gateway, it is as simple as:
 
@@ -113,3 +113,60 @@ One way to fill this table could be running the `ping` command.
 ### TCP dump
 
 To inspect a given interface, say `veth-red`, we could run `tcpdump -n -i veth-red`.
+
+
+
+## iptables
+
+A good article to learn more about `iptables` can be found [here](https://phoenixnap.com/kb/iptables-tutorial-linux-firewall).
+
+![iptables](../img/iptables.png)
+
+To output the current iptables config, we could use:
+
+```bash
+iptables -n -v --line-numbers -L [chain]
+```
+
+Generally, commands tend to follow this pattern:
+
+```bash
+iptables [option] CHAIN_rule [-j target]
+```
+
+Here is a list of some common iptables options:
+
+- `-A` (`--append`) – Add a rule to a chain (at the end).
+- `-C` (`--check`) – Look for a rule that matches the chain’s requirements.
+- `-D` (`--delete`) – Remove specified rules from a chain.
+- `-F [chain]` (`--flush`) – Remove all rules.
+- `-I chain [rulenum]` (`--insert`) – Add a rule to a chain at a given position.
+- `-L` (`--list`) – Show all rules in a chain.
+- `-N` (`--new`) – Create a new chain.
+- `-v` (`--verbose`) – Show more information when using a list option.
+- `-X` (`--delete-chain`) – Delete the provided chain.
+
+By default, the `filter` table will be affected. However, if this is not intended, you can choose another filter using the `-t` (`--table`) option.
+
+The `-j` (`--jump`) option will specify the target for the current rule.
+
+For example, `iptables -A INPUT -i lo -j ACCEPT` will append to the INPUT chain a rule that allows any traffic on the loopback interface.
+
+Here is a list with other common iptables options:
+
+- `-d` (`--destination`) - Specifies the destination.
+- `-s` (`--source`) - Specifies the source.
+- `-p` (`--proto`) - Specifies the protocol (e.g. `tcp`).
+- `--dport` - Specifies the port, based on `/etc/services`.
+
+### Statefulness
+
+What if you want to only allow the TCP traffic that a certain machine has initiated? This would be impossible without the `state` module implemented in `iptables`.
+
+In order to use the _statefulness_ of `iptables`, you have to first load the module using the `-m` parameter and then specify a state using `--state`. [For example](https://explainshell.com/explain?cmd=iptables+-A+INPUT+-m+state+--state+ESTABLISHED%2CRELATED+-j+ACCEPT):
+
+```bash
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+```
+
+Read more about this feature [here](https://kb.novaordis.com/index.php/Iptables_State_Module).
