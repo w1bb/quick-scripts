@@ -21,7 +21,7 @@ opt.termguicolors = true
 opt.colorcolumn = '80,100,120'
 opt.signcolumn = 'yes'
 opt.cmdheight = 1
-opt.scrolloff = 10
+opt.scrolloff = 1
 opt.completeopt = "menuone,noinsert,noselect"
 
 -- Behaviour

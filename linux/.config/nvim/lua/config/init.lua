@@ -19,7 +19,7 @@ require("config.keymaps")
 local opts = {
     root = vim.fn.stdpath("data") .. "/lazy", -- directory where plugins will be installed
     defaults = {
-        lazy = true, -- should plugins be lazy-loaded?
+        lazy = false, -- should plugins be lazy-loaded?
     },
     -- install = {
     --     -- try to load one of these colorschemes when starting an installation during startup
@@ -49,3 +49,6 @@ local opts = {
 }
 
 require("lazy").setup('plugins', opts)
+print("Hello!")
+--require("catppuccin").setup({transparent_background = true})
+

@@ -11,7 +11,7 @@ remember_window_size no
 initial_window_width  120c
 initial_window_height 28c
 show_hyperlink_targets yes
-# background_opacity 0.9
+# background_opacity 0.8
 background_image ~/Pictures/wallpapers/2.png
 background_tint 0.95
 background_image_layout cscaled
@@ -27,9 +27,6 @@ map f11 toggle_fullscreen
 
 
 # BEGIN_KITTY_THEME
-# Catppuccin-Mocha
+# 1984 Dark
 include current-theme.conf
 # END_KITTY_THEME
-
-# Change the background to something more sane
-background #05050a
