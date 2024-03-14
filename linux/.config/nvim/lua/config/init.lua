@@ -49,6 +49,5 @@ local opts = {
 }
 
 require("lazy").setup('plugins', opts)
-print("Hello!")
 --require("catppuccin").setup({transparent_background = true})
 
