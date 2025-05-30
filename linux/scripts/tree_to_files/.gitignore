@@ -1,0 +1,5 @@
+.venv
+build
+dist
+tree_to_files.spec
+__pycache__

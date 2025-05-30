@@ -43,6 +43,10 @@ The following made it into my collection:
   # dd bs=4M if=path/to/iso of=/dev/sdX conv=fsync oflag=direct status=progress
   ```
 
+- **$** Tree To File Structure
+
+  This script will convert a file structure given in the form of a `tree` output (or similar) into the files themselves.
+
 ## Windows
 
 ### Windows config files

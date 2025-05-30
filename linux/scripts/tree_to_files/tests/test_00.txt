@@ -1,0 +1,23 @@
+sign-language-interpreter/
+├── docker-compose.yml
+├── backend/
+│   ├── Dockerfile
+│   ├── requirements.txt
+│   └── app/
+│       ├── __init__.py
+│       └── main.py
+└── frontend/
+    ├── Dockerfile
+    ├── nginx.conf      # For serving React app and proxying API calls
+    ├── package.json
+    ├── tsconfig.json
+    ├── public/
+    │   └── index.html
+    └── src/
+        ├── App.tsx
+        ├── index.tsx
+        └── reportWebVitals.ts # (Optional, from CRA)
+        └── setupTests.ts    # (Optional, from CRA)
+        └── logo.svg         # (Optional, from CRA)
+        └── App.test.tsx     # (Optional, from CRA)
+        └── react-app-env.d.ts

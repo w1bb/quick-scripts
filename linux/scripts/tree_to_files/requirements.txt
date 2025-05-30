@@ -1,0 +1,2 @@
+bigtree==0.29.2
+pyinstaller
