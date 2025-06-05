@@ -47,6 +47,10 @@ The following made it into my collection:
 
   This script will convert a file structure given in the form of a `tree` output (or similar) into the files themselves.
 
+- **$** File Crawler
+
+  This script will crawl a folder and output the content of all the files inside. Example usage: `python3 file_crawler.py . '*.txt' 'project_a/*.{go,py}' '!project_b/internal/'`
+
 ## Windows
 
 ### Windows config files
